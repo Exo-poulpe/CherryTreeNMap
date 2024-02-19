@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cherrytree>
+  <bookmarks list=""/>
+  {% for node in nodes %}
+  <node name="{{ node.name }}" unique_id="{{ node.unique_id }}" prog_lang="custom-colors" tags="" readonly="0" nosearch_me="0" nosearch_ch="0" custom_icon_id="0" is_bold="{{node.is_bold}}" foreground="{{node.foreground}}" ts_creation="{{ node.ts_creation }}" ts_lastsave="{{ node.ts_lastsave }}">
+  <rich_text>{{ node.data }}</rich_text>
+  </node>
+  {% endfor %}
+</cherrytree>
