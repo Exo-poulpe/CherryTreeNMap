@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Start new tmux session
+tmux new-session -d -s {{ session_name }} -n window0
+
+{% for command in commands %}
+# Additional window with command
+tmux new-window -t {{ session_name }} -n window{{ loop.index }}
+tmux send-keys -t {{ session_name }}:{{ loop.index }} '{{ command }}' C-m
+{% endfor %}
+
+tmux attach-session -t {{ session_name }}
